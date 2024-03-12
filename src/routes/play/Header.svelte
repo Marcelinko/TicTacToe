@@ -10,7 +10,7 @@
 	const socket: Socket = getContext('socket');
 	import room from '$lib/room';
 	import type { User,Bot } from '$lib/types';
-	import { PUBLIC_URL } from "$env/static/public"
+	import { env } from "$env/dynamic/public"
 
 	const leaveRoom = () => {
 		socket.emit('room:leave', { roomId: $room.id });
@@ -24,7 +24,7 @@
 		});
 	};
 	const invitePlayers = () => {
-		navigator.clipboard.writeText(`${PUBLIC_URL}/?id=` + $room.id);
+		navigator.clipboard.writeText(`${env.PUBLIC_URL}/?id=` + $room.id);
 		toast('Link copied to clipboard');
 	};
 	const swapSymbols = () => {
