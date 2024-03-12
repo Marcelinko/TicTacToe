@@ -6,11 +6,11 @@
 	import { goto } from '$app/navigation';
 	import { toast } from 'svelte-sonner';
 	import { getContext } from 'svelte';
-	import {env} from '$env/dynamic/public'
 
 	const socket: Socket = getContext('socket');
 	import room from '$lib/room';
 	import type { User,Bot } from '$lib/types';
+	import { PUBLIC_URL } from "$env/static/public"
 
 	const leaveRoom = () => {
 		socket.emit('room:leave', { roomId: $room.id });
@@ -23,9 +23,8 @@
 			}
 		});
 	};
-	//TODO: ENV file for the url
 	const invitePlayers = () => {
-		navigator.clipboard.writeText(`${env.PUBLIC_URL}/?id=` + $room.id);
+		navigator.clipboard.writeText(`${PUBLIC_URL}/?id=` + $room.id);
 		toast('Link copied to clipboard');
 	};
 	const swapSymbols = () => {
@@ -93,7 +92,7 @@
 		</Sheet.Content>
 	</Sheet.Root>
 
-	<div class="flex gap-4 invisible md:visible">
+	<div class="gap-4 hidden md:flex">
 		<Button on:click={leaveRoom} variant="secondary">
 			<LogOut class="mr-2 h-5 w-5" />
 			Leave

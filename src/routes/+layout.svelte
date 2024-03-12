@@ -7,7 +7,7 @@
 	import { browser } from '$app/environment';
 
 	if(browser){
-		const socket: Socket = io();
+		const socket: Socket = io()
 
 		socket.on('connect', () => {
 			toast('Connected to server');
