@@ -7,7 +7,6 @@ import { handler } from '../build/handler.js';
 import roomHandler from "./api/handlers/roomHandler.js";
 import tictactoeHandler from "./api/handlers/tictactoeHandler.js";
 
-const port = 3000;
 const app = express();
 const server = createServer(app)
 
@@ -31,7 +30,7 @@ const onConnection = (socket) => {
 io.on("connection", onConnection);
 app.use(handler);
 
-server.listen(port, () => {
+server.listen(process.env.PORT || 3000, () => {
 	console.log(`Server is running`);
 });
 
