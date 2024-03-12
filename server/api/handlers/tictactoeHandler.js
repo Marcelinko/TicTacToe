@@ -7,7 +7,7 @@ const tictactoeHandler = (io, socket) => {
             if (error) {
                 return;
             }
-            const room = rooms.rooms[data.roomId];
+            const room = rooms[data.roomId];
             if (!room) {
                 cb("Room no longer exists");
                 return;
@@ -51,7 +51,7 @@ const tictactoeHandler = (io, socket) => {
                 console.error(error);
                 return;
             }
-            const room = rooms.rooms[data.roomId];
+            const room = rooms[data.roomId];
             if (!room) {
                 cb("Room no longer exists");
                 return;
