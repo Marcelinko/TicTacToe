@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { beforeNavigate, goto } from '$app/navigation';
+	import { goto } from '$app/navigation';
 	import type { Socket } from 'socket.io-client';
 	import { onDestroy, onMount, getContext } from 'svelte';
 
@@ -19,12 +19,6 @@
 	if (browser && !$room.users) {
 		goto('/', { replaceState: true });
 	}
-
-	beforeNavigate(({cancel}) => {
-		if(!confirm('Are you sure you want to leave ?')) {
-			cancel();
-		}
-	});
 
 	onMount(() => {
 		socket.on('room:update', (newRoom) => {

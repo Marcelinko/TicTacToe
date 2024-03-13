@@ -56,7 +56,7 @@
 			{/if}
 		{:else}
 			<DropdownMenu.Root>
-				<DropdownMenu.Trigger class="text-md">Add bot</DropdownMenu.Trigger>
+				<DropdownMenu.Trigger class="text-md underline">Add bot</DropdownMenu.Trigger>
 				<DropdownMenu.Content class="bg-[#1B1E22]">
 					<DropdownMenu.Group>
 						<DropdownMenu.Item on:click={() => addBot('easy')}>Easy😊</DropdownMenu.Item>

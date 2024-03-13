@@ -67,6 +67,16 @@
 	});
 
 </script>
+<svelte:head>
+	<title>Tic Tac Toe: Play Online with Friends</title>
+	<meta name="description" content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!">
+	<meta property="og:title" content="Tic Tac Toe: Play Online with Friends">
+	<meta property="og:description" content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!">
+	<meta property="og:url" content="https://tictactoe-mcts.up.railway.app/">
+	<meta property="twitter:title" content="Tic Tac Toe: Play Online with Friends">
+	<meta property="twitter:description" content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!">
+	<meta name="theme-color" content="#F2CB07">
+</svelte:head>
 <svelte:window on:keydown={handleEnter} />
 <AlertDialog.Root open={alertOpen}>
 	<AlertDialog.Content>
