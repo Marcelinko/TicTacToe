@@ -8,7 +8,7 @@
 
 	import { onMount, getContext } from 'svelte';
 
-	import * as AlertDialog from "$lib/components/ui/alert-dialog";
+	import * as AlertDialog from '$lib/components/ui/alert-dialog';
 	import { Button } from '$lib/components/ui/button';
 	import { ChevronLeft } from 'lucide-svelte';
 	import Header from './Header.svelte';
@@ -35,7 +35,7 @@
 		}
 		socket.emit('room:create', { nickname }, (newRoom: Room) => {
 			room.set(newRoom);
-			goto(`/play`, { replaceState: true});
+			goto(`/play`, { replaceState: true });
 		});
 	};
 	const joinRoom = () => {
@@ -53,7 +53,7 @@
 				return;
 			}
 			room.set(newRoom);
-			goto(`/play`, { replaceState: true});
+			goto(`/play`, { replaceState: true });
 		});
 	};
 	const handleEnter = (e: KeyboardEvent) => {
@@ -69,13 +69,17 @@
 </script>
 <svelte:head>
 	<title>Tic Tac Toe: Play Online with Friends</title>
-	<meta name="description" content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!">
-	<meta property="og:title" content="Tic Tac Toe: Play Online with Friends">
-	<meta property="og:description" content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!">
-	<meta property="og:url" content="https://tictactoe-mcts.up.railway.app/">
-	<meta property="twitter:title" content="Tic Tac Toe: Play Online with Friends">
-	<meta property="twitter:description" content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!">
-	<meta name="theme-color" content="#F2CB07">
+	<meta content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!"
+				name="description">
+	<meta content="Tic Tac Toe: Play Online with Friends" property="og:title">
+	<meta content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!"
+				property="og:description">
+	<meta content="https://tictactoe-mcts.up.railway.app/" property="og:url">
+	<meta content="Tic Tac Toe: Play Online with Friends" property="twitter:title">
+	<meta content="Experience the ultimate Tic Tac Toe showdown online! Play against friends or challenge advanced AI bots for an intense gaming thrill!"
+				property="twitter:description">
+	<meta content="#F2CB07" name="theme-color">
+	<meta content="PMN-1aHSnHiQ8gNH2Rh88no2fFIUHac58kq85TRN9Hk" name="google-site-verification" />
 </svelte:head>
 <svelte:window on:keydown={handleEnter} />
 <AlertDialog.Root open={alertOpen}>
@@ -97,7 +101,8 @@
 		class="relative mx-4 flex h-full min-h-[300px] max-h-[470px] w-full max-w-[610px] flex-col items-center justify-between border-none bg-[#1B1E22] px-8 py-11 sm:rounded-[12px]"
 	>
 		{#if roomId}
-			<Button class="absolute top-0 left-0 ml-6 mt-11 hover:bg-transparent" size="icon" variant="ghost" on:click={() => roomId = ''}>
+			<Button class="absolute top-0 left-0 ml-6 mt-11 hover:bg-transparent" size="icon" variant="ghost"
+							on:click={() => roomId = ''}>
 				<ChevronLeft class="h-8 w-8 text-secondary" />
 			</Button>
 		{/if}
@@ -126,7 +131,6 @@
 				<p class="mt-1 text-[#FB3640]">{error}</p>
 			</div>
 		</div>
-
 		{#if !loading}
 			{#if roomId}
 				<Button class="font-semibold text-base w-[150px] h-[45px]" on:click={joinRoom}>Join</Button>
@@ -144,7 +148,6 @@
 			</Button>
 		{/if}
 	</div>
-
 </main>
 <Footer />
 
