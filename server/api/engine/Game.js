@@ -122,13 +122,13 @@ export default class TicTacToe extends EventEmitter {
         let iterations;
         switch (difficulty) {
             case "easy":
-                iterations = 20;
+                iterations = 50;
                 break;
             case "hard":
-                iterations = 40;
+                iterations = 250;
                 break;
             case "insane":
-                iterations = 150;
+                iterations = 1500;
                 break;
             default:
                 iterations = 25;

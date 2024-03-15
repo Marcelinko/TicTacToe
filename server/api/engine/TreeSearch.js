@@ -51,7 +51,6 @@ export default class TreeSearch {
         return moves[Math.floor(Math.random() * moves.length)];
     }
 
-    //TODO: fix
     backpropagation(node, result) {
         while (node !== null) {
             node.visits++;
